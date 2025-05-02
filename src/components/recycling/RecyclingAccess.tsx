@@ -112,7 +112,7 @@ export function RecyclingAccess() {
     // Validate code via API
     const validateCode = async (code: string) => {
         try {
-            const response = await fetch("http://localhost:8000/api/contenedor/validar-codigo", {
+            const response = await fetch("https://zyrcle-backend.diegormdev.site/api/contenedor/validar-codigo", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ codigo: code }),
@@ -163,7 +163,7 @@ export function RecyclingAccess() {
         const timeSpent = (endTime - startTime) / 1000; // Tiempo en segundos
 
         try {
-            const response = await fetch("http://localhost:8000/api/contenedor/finalizar", {
+            const response = await fetch("https://zyrcle-backend.diegormdev.site/api/contenedor/finalizar", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -392,12 +392,12 @@ export function RecyclingAccess() {
                             <CardTitle className="text-xl text-eco-forest flex items-center">
                                 <Recycle
                                     className={`h-6 w-6 mr-2 ${connectedContainer.type === "Plastic"
-                                            ? "text-blue-500"
-                                            : connectedContainer.type === "Paper"
-                                                ? "text-green-500"
-                                                : connectedContainer.type === "Glass"
-                                                    ? "text-teal-500"
-                                                    : "text-gray-500"
+                                        ? "text-blue-500"
+                                        : connectedContainer.type === "Paper"
+                                            ? "text-green-500"
+                                            : connectedContainer.type === "Glass"
+                                                ? "text-teal-500"
+                                                : "text-gray-500"
                                         }`}
                                 />
                                 Connected Container
@@ -430,8 +430,8 @@ export function RecyclingAccess() {
                                 <span className="text-sm font-medium text-eco-forest/80">Status</span>
                                 <span
                                     className={`px-3 py-1 rounded-full text-xs font-semibold ${connectedContainer.status === "Active"
-                                            ? "bg-green-100 text-green-800"
-                                            : "bg-amber-100 text-amber-800"
+                                        ? "bg-green-100 text-green-800"
+                                        : "bg-amber-100 text-amber-800"
                                         }`}
                                 >
                                     {connectedContainer.status}

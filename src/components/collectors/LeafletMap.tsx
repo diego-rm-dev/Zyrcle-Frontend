@@ -49,7 +49,7 @@ export function LeafletMap({
 
   useEffect(() => {
     if (!showRoute) {
-      fetch("http://localhost:8000/api/rutas/quemadas")
+      fetch("https://zyrcle-backend.diegormdev.site/api/rutas/quemadas")
         .then((res) => res.json())
         .then((data) => setContainers(data))
         .catch((err) => console.error("Error al obtener contenedores:", err));
@@ -62,7 +62,7 @@ export function LeafletMap({
           };
           setUserLocation(userLocation);
 
-          fetch("http://localhost:8000/api/rutas/optimizar", {
+          fetch("https://zyrcle-backend.diegoormdev.site/api/rutas/optimizar", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

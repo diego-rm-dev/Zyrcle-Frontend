@@ -92,7 +92,7 @@ export function CollectorsMap() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/rutas/quemadas")
+    fetch("https://zyrcle-backend.diegoormdev.site/api/rutas/quemadas")
       .then((res) => res.json())
       .then((data) => {
         console.log("containers received:", data);
@@ -215,8 +215,8 @@ export function CollectorsMap() {
                       variant={routeOptimized ? "outline" : "default"}
                       size="lg"
                       className={`flex items-center transition-all duration-200 ${routeOptimized
-                          ? "bg-eco-emerald text-white hover:bg-eco-emerald-dark"
-                          : "bg-eco-forest text-white hover:bg-eco-forest-dark"
+                        ? "bg-eco-emerald text-white hover:bg-eco-emerald-dark"
+                        : "bg-eco-forest text-white hover:bg-eco-forest-dark"
                         }`}
                       onClick={optimizeRoute}
                     >
@@ -318,8 +318,8 @@ export function CollectorsMap() {
                               <div className="flex items-center space-x-3 truncate">
                                 <span
                                   className={`w-6 h-6 flex items-center justify-center rounded-full ${isVisited
-                                      ? "bg-gray-200 text-gray-600"
-                                      : "bg-eco-emerald text-white"
+                                    ? "bg-gray-200 text-gray-600"
+                                    : "bg-eco-emerald text-white"
                                     }`}
                                 >
                                   {index + 1}
@@ -372,8 +372,8 @@ export function CollectorsMap() {
                             <Button
                               onClick={() => navigateTo(container)}
                               className={`w-full transition-all duration-200 ${isVisited
-                                  ? "bg-gray-300 hover:bg-gray-400 text-gray-700"
-                                  : "bg-eco-emerald hover:bg-eco-emerald-dark text-white"
+                                ? "bg-gray-300 hover:bg-gray-400 text-gray-700"
+                                : "bg-eco-emerald hover:bg-eco-emerald-dark text-white"
                                 }`}
                             >
                               <Navigation className="h-5 w-5 mr-2" />
@@ -422,8 +422,8 @@ export function CollectorsMap() {
                         <div
                           key={container.id}
                           className={`p-4 cursor-pointer transition-all duration-200 hover:bg-eco-forest/10 ${selectedContainer === container.id
-                              ? "bg-eco-forest/10"
-                              : ""
+                            ? "bg-eco-forest/10"
+                            : ""
                             }`}
                           onClick={() => setSelectedContainer(container.id)}
                         >
